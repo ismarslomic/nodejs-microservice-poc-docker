@@ -4,6 +4,7 @@ Files for creating docker containers for running the nodejs-microservice-poc
 ## Get started
 ```YAML
 # 1. make sure you are at top level of this folder
+git clone https://github.com/ismarslomic/nodejs-microservice-poc-docker.git
 # 2. build all images (Docker-Compose does not automatically update images if Dockerfiles has changed)
 docker-compose build
 # 3. create and start the containers
