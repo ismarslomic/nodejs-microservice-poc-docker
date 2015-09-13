@@ -1,0 +1,19 @@
+mongo:
+  # do not need specific Dockerfile for mongo as official mongo image is sufficient
+  image: mongo:latest
+  ports:
+    - "27017:27017"
+  volumes:
+    - ./mongo/db:/data
+mongo-express:
+  build: mongo-express
+  links:
+    - mongo:mongo
+  ports:
+    - "8081:8081"
+microservice:
+  build: microservice
+  links:
+    - mongo:mongo
+  ports:
+    - "3000:3000"
